@@ -1,3 +1,4 @@
+#import des modules 
 import tkinter as tk
 #constantes
 
@@ -21,6 +22,6 @@ canvas.grid(row=1, rowspam=10, column=1, columnspam=10)
 
 bouton_demarer.grid(row=1, column=10)
 
-
+ 
 
 
