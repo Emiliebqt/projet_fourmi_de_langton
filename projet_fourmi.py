@@ -1,7 +1,7 @@
 #import des modules 
 import tkinter as tk
 #constantes
-#aaa
+
 #fonctions 
 def demarer():
     pass
