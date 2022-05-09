@@ -23,7 +23,6 @@ bouton_play=tk.Button(root, text="play", command=demarer)
 bouton_next=tk.Button(root, text="next", command=next)
 bouton_pause=tk.Button(root, text="pause", command=pause)
 
-
 #definition des widgets 
 
 canvas.grid(row=1, rowspam=10, column=1, columnspam=10)
@@ -33,4 +32,5 @@ bouton_next.grid(row=2, column=10)
 bouton_pause.grid(row=3, column=10)
 
  
+
 
