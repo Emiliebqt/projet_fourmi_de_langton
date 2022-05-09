@@ -29,8 +29,8 @@ bouton_pause=tk.Button(root, text="pause", command=pause)
 canvas.grid(row=1, rowspam=10, column=1, columnspam=10)
 
 bouton_play.grid(row=1, column=10)
-bouton_next.grid(row=1, column=10)
-bouton_pause.grid(row=1, column=10)
+bouton_next.grid(row=2, column=10)
+bouton_pause.grid(row=3, column=10)
 
  
 
