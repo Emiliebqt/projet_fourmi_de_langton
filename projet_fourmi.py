@@ -12,7 +12,7 @@ def demarer():
 root=tk.Tk()
 root.title("Fourmi de Langton")
 #creation du canvas 
-canvas=canvas(root, width=700, height=300, bg="white")
+canvas=tk.Canvas(root, width=700, height=300, bg="white")
 
 bouton_demarer=tk.Button(root, text="demarer")
 
