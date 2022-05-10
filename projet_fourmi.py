@@ -2,7 +2,8 @@
 import tkinter as tk
 
 #constantes
-taille=10
+taille=1
+DIM=100
 
 #constantes du canvas
 
@@ -11,6 +12,10 @@ nwidth = canvasSize // taille
 nheight = canvasSize // taille
 items = [[0] * nwidth for _ in range(nheight)]
 
+position=(nheight // 2-10, nwidth // 2+19)
+direction="N"
+
+UNIT=canvasSize//DIM
 #creation du canvas
 #root=tk.Tk()
 #root.title("Fourmi de Langton")
@@ -44,7 +49,7 @@ def dessin(position, direction, items):
 
     return (ii, jj), direction
 
-def deplacement(position, direction, items):
+def deplacement():
     i, j = position
 
     if items[i][j] == 0:
@@ -73,11 +78,17 @@ def animation():
     position, direction = dessin(position, direction)
     root.after(DELAY, animation)
 
-def make_grid():
+def grille():
     for j in range(nwidth):
-        canvas.create_line((j * UNIT, 0), (j * UNIT, HEIGHT))
+        canvas.create_line((j * UNIT, 0), (j * UNIT, canvasSize))
     for i in range(nheight):
-        canvas.create_line((0, i * UNIT), (WIDTH, i * UNIT))
+        canvas.create_line((0, i * UNIT), (canvasSize, i * UNIT))
+
+
+def anim(): #NE FONCTIONNE PAS 
+    global position, direction
+    position, direction = dessin(position, direction, items)
+    root.after(DELAY, anim)
 
 def demarer():
     """fontion permettant de lancer l'animation"""
@@ -120,6 +131,8 @@ bouton_play.grid(row=0, column=0)#ajouter padx=5 et pady+5 ???
 bouton_next.grid(row=1, column=0)
 bouton_pause.grid(row=2, column=0)
 #bouton_curseur.grid(row=3, column=0)
+
+grille()
 
 
 root.mainloop()
